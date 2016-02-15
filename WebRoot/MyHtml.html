@@ -1,0 +1,28 @@
+
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE> My First Prototype Example </TITLE>
+<!--倒入使用的prototype.js文件-->
+<script src="prototype.js"></script>
+<script>
+    function getTime()
+    {
+      var url="http://localhost:8080/FileUpload/periodcal.jsp";//发送地址的URL
+      var myAjax=new Ajax.PeriodicalUpdater('showTime', url, {asynchronous:true, frequency:1});
+    }
+</script>
+</HEAD>
+<BODY>
+<div id="showTime">
+</div>
+  <iframe id='target_upload' name='target_upload' src='' style='display: none'></iframe>
+
+  <form enctype="multipart/form-data" name="form" method="post" action="update.jsp">
+  <BR>
+  请选择上传的文件：<BR>
+  <input name="importFile" type="file">
+  <input id="submitButton" type="submit" value="上传"/>
+  </form>
+</BODY>
+</HTML>
